@@ -1,0 +1,1461 @@
+@font-face {
+	font-family: 'codropsicons';
+	font-weight: normal;
+	font-style: normal;
+	src: url('../fonts/codropsicons/codropsicons.eot');
+	src: url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'), url('../fonts/codropsicons/codropsicons.woff') format('woff'), url('../fonts/codropsicons/codropsicons.ttf') format('truetype'), url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+}
+
+*,
+*::after,
+*::before {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.clearfix::before,
+.clearfix::after {
+	content: '';
+	display: table;
+}
+
+.clearfix::after {
+	clear: both;
+}
+
+body {
+	font-family: 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: #515158;
+	background: #f0f0f0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	text-decoration: none;
+	color: #aaa;
+	outline: none;
+}
+
+a:hover,
+button:hover {
+	color: #515158;
+	outline: none;
+}
+
+a:focus,
+button:focus {
+	outline: none;
+}
+
+.hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+}
+
+/* Icons */
+.icon {
+	display: block;
+	width: 1em;
+	height: 1em;
+	margin: 0 auto;
+	fill: currentColor;
+}
+
+.container {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+}
+
+/* Header */
+
+.codrops-header {
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	padding: 1.5em 1em;
+	text-align: center;
+}
+
+.codrops-header h1 {
+	font-size: 1.15em;
+	font-weight: normal;
+	line-height: 1;
+	margin: 0 0 0 1em;
+}
+
+/* Top Navigation Style */
+
+.codrops-links {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.codrops-links::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 1px;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.1);
+	-webkit-transform: rotate3d(0, 0, 1, 22.5deg);
+	transform: rotate3d(0, 0, 1, 22.5deg);
+}
+
+.codrops-icon {
+	display: inline-block;
+	width: 1.5em;
+	margin: 0.5em;
+	padding: 0em 0;
+	text-decoration: none;
+}
+
+.codrops-icon span {
+	display: none;
+}
+
+.codrops-icon::before {
+	font-family: 'codropsicons';
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	line-height: 1;
+	margin: 0 5px;
+	text-transform: none;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+.codrops-icon--drop::before {
+	content: '\e001';
+	color: #09c;
+}
+
+.codrops-icon--prev::before {
+	content: '\e004';
+}
+
+.main {
+	position: fixed;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	width: calc(100vw - 300px);
+	height: 100vh;
+}
+
+.mall {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	-webkit-perspective: 3500px;
+	perspective: 3500px;
+	-webkit-perspective-origin: 0% 50%;
+	perspective-origin: 0% 50%;
+	-webkit-transition: -webkit-transform 0.8s;
+	transition: transform 0.8s;
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.mall.mall--content-open {
+	-webkit-transform: translate3d(0,-25%,0) scale3d(0.8,0.8,1);
+	transform: translate3d(0,-25%,0) scale3d(0.8,0.8,1);
+}
+
+.surroundings,
+.levels {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.surroundings {
+	width: 192vmin;
+	/* double of mall map */
+	height: 128vmin;
+	margin: -64vmin 0 0 -96vmin;
+	pointer-events: none;
+	-webkit-transition: opacity 0.8s;
+	transition: opacity 0.8s;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.surroundings__map {
+	opacity: 0.3;
+	max-width: 100%;
+	display: block;
+}
+
+.surroundings--hidden {
+	opacity: 0;
+}
+
+.levels {
+	width: 96vmin;
+	height: 64vmin;
+	margin: -32vmin 0 0 -95vmin;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.surroundings,
+.levels {
+	-webkit-transform: rotateX(70deg) rotateZ(-45deg) translateZ(-15vmin);
+	transform: rotateX(70deg) rotateZ(-45deg) translateZ(-15vmin);
+}
+
+.level {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	pointer-events: auto;
+	-webkit-transition: opacity 1s, -webkit-transform 1s;
+	transition: opacity 1s, transform 1s;
+	-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.level::after {
+	font-size: 2.5vmin;
+	line-height: 0;
+	position: absolute;
+	z-index: 100;
+	top: -2em;
+    left: 7.5em;
+	white-space: nowrap;
+	color: #7d7d86;
+	-webkit-transform: rotateZ(45deg) rotateX(-70deg) translateZ(5vmin);
+	transform: rotateZ(45deg) rotateX(-70deg) translateZ(5vmin);
+	-webkit-transition: -webkit-transform 1s, color 0.3s;
+	transition: transform 1s, color 0.3s;
+	-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.level:hover::after,
+.level--current::after {
+	color: #515158;
+}
+
+.level--current::after {
+	-webkit-transform: rotateZ(-20deg) rotateZ(45deg) rotateX(-70deg) translateZ(5vmin) translateX(5vmin) translateY(-10vmin);
+	transform: rotateZ(-20deg) rotateZ(45deg) rotateX(-70deg) translateZ(5vmin) translateX(5vmin) translateY(-10vmin);
+}
+
+.level--1::after {
+	content: 'G';
+}
+
+.level--2::after {
+	content: 'F1';
+}
+
+.level--3::after {
+	content: 'F2';
+}
+
+.level--4::after {
+	content: 'F3';
+}
+
+.level--5::after {
+	content: 'F4';
+}
+
+.level:not(:first-child) {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.level--2 {
+	-webkit-transform: translateZ(10vmin);
+	transform: translateZ(10vmin);
+}
+
+.level--3 {
+	-webkit-transform: translateZ(20vmin);
+	transform: translateZ(20vmin);
+}
+
+.level--4 {
+	-webkit-transform: translateZ(30vmin);
+	transform: translateZ(30vmin);
+}
+
+.level--5 {
+	-webkit-transform: translateZ(40vmin);
+	transform: translateZ(40vmin);
+}
+
+
+
+/* Selection transitions */
+
+.levels--selected-1 .level:not(.level--1),
+.levels--selected-2 .level:not(.level--2),
+.levels--selected-3 .level:not(.level--3),
+.levels--selected-4 .level:not(.level--4),
+.levels--selected-5 .level:not(.level--5) {
+	opacity: 0;
+	/* fade out all others */
+}
+
+/* Other levels */
+
+.level--current ~ .level {
+	-webkit-transform: translateZ(90vmin);
+	transform: translateZ(90vmin);
+}
+
+.levels--selected-2 .level--1,
+.levels--selected-3 .level--1,
+.levels--selected-4 .level--1,
+.levels--selected-3 .level--2,
+.levels--selected-4 .level--2,
+.levels--selected-4 .level--3 {
+	-webkit-transform: translateZ(-60vmin);
+	transform: translateZ(-60vmin);
+}
+
+/* Delays */
+/* 1 */
+
+.levels--selected-1 .level--3,
+.levels--selected-2 .level--3,
+.levels--selected-3 .level--2,
+.levels--selected-4 .level--2 {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+
+.levels--selected-1 .level--2,
+.levels--selected-2 .level--current,
+.levels--selected-2 .level--current::after,
+.levels--selected-3 .level--current,
+.levels--selected-3 .level--current::after,
+.levels--selected-4 .level--3 {
+	-webkit-transition-delay: 0.25s;
+	transition-delay: 0.25s;
+}
+
+.levels--selected-1 .level--current,
+.levels--selected-1 .level--current::after,
+.levels--selected-4 .level--current,
+.levels--selected-4 .level--current::after {
+	-webkit-transition-delay: 0.45s;
+	transition-delay: 0.45s;
+}
+
+/* Current level */
+
+.level.level--current {
+	-webkit-transform: translateZ(15vmin) rotate3d(0,0,1,20deg);
+	/* go to center */
+	transform: translateZ(15vmin) rotate3d(0,0,1,20deg);
+}
+
+/* Navigation classes */
+.levels--open .level,
+.levels--open .level::after {
+	-webkit-transition: -webkit-transform 1s, opacity 1s;
+	transition: transform 1s, opacity 1s;
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+}
+
+.levels--open .level.level--current {
+	opacity: 1;
+}
+
+.levels--open .level.level--moveOutUp,
+.levels--open .level.level--moveOutDown {
+	opacity: 0;
+}
+
+.levels--open .level.level--moveOutUp {
+	-webkit-transform: translateZ(90vmin);
+	transform: translateZ(90vmin);
+}
+
+.levels--open .level.level--moveOutDown {
+	-webkit-transform: translateZ(-60vmin);
+	transform: translateZ(-60vmin);
+}
+
+
+/* Level nav */
+.mallnav {
+	position: absolute;
+	top: 0;
+	right: 0;
+	text-align: center;
+	-webkit-transition: opacity 0.8s;
+	transition: opacity 0.8s;
+}
+
+.mallnav--hidden {
+	pointer-events: none;
+	opacity: 0;
+}
+
+/* Box button */
+.boxbutton {
+	font-size: 2em;
+	display: block;
+	width: 2em;
+	height: 2em;
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	border: 0;
+	background: #d7d7dc;
+}
+
+.boxbutton--dark {
+	background: #c4c4c7;
+}
+
+.boxbutton--darker {
+	background: #2c2c2f;
+}
+
+.boxbutton--alt {
+	background: #3d1975;
+}
+
+.boxbutton--disabled,
+.boxbutton--disabled:focus,
+.boxbutton--disabled:hover {
+	cursor: default;
+	pointer-events: none;
+	opacity: 0.2;
+}
+
+
+
+
+/* Level map */
+
+.map__ground {
+	fill: #d7d7dc;
+}
+
+.map__outline {
+	-webkit-transition: fill 0.3s;
+	transition: fill 0.3s;
+	fill: #bbb;
+}
+
+
+.map__seat{
+	-webkit-transition: fill-opacity 0.8s;
+	transition: fill-opacity 0.8s;
+	fill: #C4A484;
+	fill-opacity: 0.6;
+}
+
+.level:hover .map__outline,
+.level--current .map__outline {
+	fill: #a6a3a8;
+}
+
+.map__space {
+	-webkit-transition: fill-opacity 0.8s;
+	transition: fill-opacity 0.8s;
+	fill: #bdbdbd;
+	fill-opacity: 0.6;
+}
+
+.level--current .map__space,
+.level--current .map__seat,
+.level:hover .map__seat {
+	fill-opacity: 1;
+}
+
+ .map__space--selected {
+ 	fill: #A4A4A4;
+ }
+
+/* Content */
+.content {
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	height: 50%;
+}
+
+
+.content__item {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	padding: 3em;
+	text-align: center;
+	background: #d7d7dc;
+	-webkit-transition: -webkit-transform 0.8s;
+	transition: transform 0.8s;
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.content--open .content__item {
+	-webkit-transition: none;
+	transition: none;
+}
+
+.content__item--current {
+	-webkit-transform: translate3d(0,-100%,0);
+	transform: translate3d(0,-100%,0);
+}
+
+.content__item-title {
+	font-size: 1.85em;
+	margin: 0;
+	padding: 0 0 0.75em 0;
+	pointer-events: none;
+	font-weight: normal;
+	opacity: 0;
+	-webkit-transform: translate3d(0,-3em,0) translate3d(0,-100%,0);
+	transform: translate3d(0,-3em,0) translate3d(0,-100%,0);
+}
+
+.content__item[data-category='1'] .content__item-title {
+	color: #FF0000;
+}
+
+.content__item[data-category='2'] .content__item-title {
+	color: #0000FF;
+}
+
+.content__item--hover .content__item-title {
+	opacity: 1;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.content__item--current .content__item-title {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+
+.content__item-details {
+	opacity: 0;
+	margin: 0 auto;
+	max-width: 50vmax;
+}
+
+.content__item--current .content__item-details {
+	opacity: 1;
+}
+
+
+.content__item-picture{
+	display: block;
+	top: 0;
+	width: auto;
+	height: 0;
+	opacity: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+.content__item--current .content__item-picture{
+	opacity: 1;
+	width: auto;
+	height: 25vmin;
+}
+
+
+.content__meta {
+	margin: 0;
+	font-size: 0.85em;
+	line-height: 1.5;
+}
+
+.content__meta-item {
+	display: inline-block;
+	padding: 0 0.25em;
+	color: ;
+}
+
+.content__meta .icon {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.content__desc {
+	text-align: left;
+	margin: 7vmin 0 0 0;
+}
+
+.content__button {
+	position: absolute;
+	top: -100%;
+	right: 0;
+	-webkit-transition: opacity 0.3s 0.7s;
+	transition: opacity 0.3s 0.7s;
+}
+
+.content__button--hidden {
+	pointer-events: none;
+	opacity: 0;
+	-webkit-transition: none;
+	transition: none;
+}
+
+/* Spaces list (sidebar) */
+
+.spaces-list {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 300px;
+	min-height: 100vh;
+	padding: 5em 0 1em;
+	background: #fff;
+}
+
+.search {
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	right: 0;
+	left: calc(100vw - 300px);
+}
+
+.search__input {
+	width: 100%;
+	padding: 1.315em 2em;
+	color: #fff;
+	border: 0;
+	background: #515158;
+	border-radius: 0;
+}
+
+.search__input:focus {
+	outline: none;
+}
+
+.label {
+	position: absolute;
+	top: 4em;
+	right: 0;
+}
+
+.label__text {
+	font-size: 0.85em;
+	line-height: 1;
+	display: block;
+	padding: 1em;
+	color: #e4e4e4;
+}
+
+.label__checkbox {
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	opacity: 0;
+}
+
+.label__checkbox:checked + .label__text {
+	color: #515158;
+}
+
+.list {
+	margin: 0 0 2em;
+	padding: 0 1em 1em 2em;
+	list-style: none;
+}
+
+.list__item {
+	font-size: 1.05em;
+	line-height: 1;
+	position: relative;
+	display: block;
+}
+
+.list__item:first-child {
+	margin-top: 2em;
+}
+
+.grouped-by-category [data-category='1']:first-child,
+.grouped-by-category :not([data-category='1']) + [data-category='1'],
+.grouped-by-category [data-category='2']:first-child,
+.grouped-by-category :not([data-category='2']) + [data-category='2'] {
+	margin-top: 4em;
+}
+
+.grouped-by-category [data-category='1']:first-child::before,
+.grouped-by-category :not([data-category='1']) + [data-category='1']::before,
+.grouped-by-category [data-category='2']:first-child::before,
+.grouped-by-category :not([data-category='2']) + [data-category='2']::before {
+	font-size: 1.25em;
+	position: absolute;
+	top: -1.75em;
+	left: 0;
+	color: #c7c7c9;
+}
+
+.grouped-by-category [data-category='1']:first-child::before,
+.grouped-by-category :not([data-category='1']) + [data-category='1']::before {
+	content: 'Intern';
+	color: #FF0000;
+}
+
+.grouped-by-category [data-category='2']:first-child::before,
+.grouped-by-category :not([data-category='2']) + [data-category='2']::before {
+	content: 'Permenant';
+	color: #0000FF;
+}
+
+.grouped-by-category [data-category='0'] {
+	display:none;
+}
+
+
+
+.list__item::after {
+	content: attr(data-space);
+	font-size: 0.65em;
+	line-height: 3;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0 0.5em;
+	pointer-events: none;
+	color: #c7c7c9;
+}
+
+.list__link {
+	font-size: 0.85em;
+	display: block;
+	padding: 0.5em 0.5em 0.5em 0;
+}
+
+.list__item--active .list__link,
+.list__link:hover {
+	color: #515158;
+}
+
+
+
+
+
+
+/* Pins */
+.level__pins {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.level__pins--active {
+	pointer-events: auto;
+}
+
+.pin {
+	position: absolute;
+	width: 1vmin;
+	height: 5.25vmin;
+	fill-opacity:0.6;
+	margin: -3vmin 0 0 18vmin; /* let the bottom tip be the reference point for individual coordinates */
+	-webkit-transform: rotateZ(-20deg) rotateZ(45deg) rotateX(-70deg);
+	transform: rotateZ(-20deg) rotateZ(45deg) rotateX(-70deg);
+	-webkit-transform-origin: 50% 100%;
+	transform-origin: 50% 100%;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+
+
+.pin__icon {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	-webkit-transform: translate3d(0,-100px,0);
+	transform: translate3d(0,-100px,0);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+	transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+}
+
+.level__pins--active .pin__icon {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.pin:nth-child(10n+2) .pin__icon {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+}
+.pin:nth-child(10n+3) .pin__icon {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+.pin:nth-child(10n+4) .pin__icon {
+	-webkit-transition-delay: 0.15s;
+	transition-delay: 0.15s;
+}
+.pin:nth-child(10n+5) .pin__icon {
+	-webkit-transition-delay: 0.2s;
+	transition-delay: 0.2s;
+}
+.pin:nth-child(10n+6) .pin__icon {
+	-webkit-transition-delay: 0.25s;
+	transition-delay: 0.25s;
+}
+.pin:nth-child(10n+7) .pin__icon {
+	-webkit-transition-delay: 0.3s;
+	transition-delay: 0.3s;
+}
+.pin:nth-child(10n+8) .pin__icon {
+	-webkit-transition-delay: 0.35s;
+	transition-delay: 0.35s;
+}
+.pin:nth-child(10n+9) .pin__icon {
+	-webkit-transition-delay: 0.4s;
+	transition-delay: 0.4s;
+}
+.pin:nth-child(10n+10) .pin__icon {
+	-webkit-transition-delay: 0.45s;
+	transition-delay: 0.45s;
+}
+
+.pin[data-category='1'] .icon--pin {
+	fill: #8B0000;
+}
+.pin[data-category='2'] .icon--pin {
+	fill: #0000FF;
+}
+
+.pin--active .icon--pin {
+	fill-opacity: 1;
+	stroke: #515158;
+	stroke-width: 15px;
+}
+
+.icon--pin {
+	width: 100%;
+	height: 100%;
+}
+
+.icon--logo {
+	position: absolute;
+	top: 11%;
+	left: 25%;
+	width: 50%;
+	height: 50%;
+	fill: white;
+	fill-opacity: 0.6;
+	-webkit-transition: fill-opacity 0.3s;
+	transition: fill-opacity 0.3s;
+}
+
+.icon--numeric--1{
+	position: absolute;
+	top: 22%;
+	left: 25%;
+	width: 25%;
+	height: 25%;
+	fill: white;
+	fill-opacity: 0;
+	-webkit-transition: fill-opacity 0.3s;
+	transition: fill-opacity 0.3s;
+}
+.icon--numeric--2{
+	position: absolute;
+	top: 22%;
+	left: 50%;
+	width: 25%;
+	height: 25%;
+	fill: white;
+	fill-opacity: 0;
+	-webkit-transition: fill-opacity 0.3s;
+	transition: fill-opacity 0.3s;
+}
+
+.pin:hover{
+	fill-opacity: 1;
+	width: 4vmin;
+	margin: -6vmin 0 0 18.75vmin;
+}
+
+.pin--active{
+	fill-opacity: 1;
+	width: 2vmin;
+	margin: -4vmin 0 0 18.25vmin;
+}
+
+.pin--active .icon--numeric--1,
+.pin:hover .icon--numeric--1 {
+	fill-opacity: 1;
+}
+
+.pin--active .icon--numeric--2,
+.pin:hover .icon--numeric--2 {
+	fill-opacity: 1;
+}
+
+
+.pin--active .icon--logo,
+.pin:hover .icon--logo {
+	fill-opacity: 1;
+}
+
+/* Pins for floor 1 */
+.pin--1-1 { top: 94.5vmin; left: 86.5vmin; }
+.pin--1-2 { top: 94.5vmin; left: 79vmin; }
+.pin--1-3 { top: 94.5vmin; left: 71.5vmin; }
+.pin--1-4 { top: 124vmin; left: 96.5vmin; }
+.pin--1-5 { top: 124vmin; left: 89.5vmin; }
+.pin--1-6 { top: 124vmin; left: 75.5vmin; }
+.pin--1-7 { top: 104vmin; left: 106.5vmin; }
+.pin--1-9 { top: 101vmin; left: 106.5vmin; }
+.pin--1-8 { top: 98vmin; left: 106.5vmin; }
+.pin--1-10 { top: 95vmin; left: 106.5vmin; }
+.pin--1-11 { top: 104vmin; left: 103.5vmin; }
+.pin--1-12 { top: 101vmin; left: 103.5vmin; }
+.pin--1-13 { top: 98vmin; left: 103.5vmin; }
+.pin--1-14 { top: 95vmin; left: 103.5vmin; }
+.pin--1-15 { top: 114vmin; left: 97.5vmin; }
+.pin--1-16 { top: 114vmin; left: 94.5vmin; }
+.pin--1-17 { top: 114vmin; left: 91.5vmin; }
+.pin--1-18 { top: 117vmin; left: 97.5vmin; }
+.pin--1-19 { top: 117vmin; left: 94.5vmin; }
+.pin--1-20 { top: 117vmin; left: 91.5vmin; }
+.pin--1-21 { top: 106vmin; left: 86vmin; }
+.pin--1-22 { top: 103vmin; left: 86vmin; }
+.pin--1-23 { top: 106vmin; left: 83vmin; }
+.pin--1-24 { top: 103vmin; left: 83vmin; }
+.pin--1-25 { top: 122.5vmin; left: 83.5vmin; }
+.pin--1-26 { top: 114vmin; left: 80.5vmin; }
+.pin--1-27 { top: 114vmin; left: 77.5vmin; }
+.pin--1-28 { top: 114vmin; left: 74.5vmin; }
+.pin--1-29 { top: 117vmin; left: 80.5vmin; }
+.pin--1-30 { top: 117vmin; left: 77.5vmin; }
+.pin--1-31 { top: 117vmin; left: 74.5vmin; }
+.pin--1-32 { top: 1vmin; left: 1vmin; }
+.pin--1-33 { top: 1vmin; left: 1vmin; }
+.pin--1-34 { top: 1vmin; left: 1vmin; }
+.pin--1-35 { top: 1vmin; left: 1vmin; }
+.pin--1-36 { top: 1vmin; left: 1vmin; }
+.pin--1-37 { top: 1vmin; left: 1vmin; }
+.pin--1-38 { top: 1vmin; left: 1vmin; }
+.pin--1-39 { top: 1vmin; left: 1vmin; }
+.pin--1-40 { top: 1vmin; left: 1vmin; }
+.pin--1-41 { top: 1vmin; left: 1vmin; }
+.pin--1-42 { top: 1vmin; left: 1vmin; }
+.pin--1-43 { top: 1vmin; left: 1vmin; }
+.pin--1-44 { top: 1vmin; left: 1vmin; }
+.pin--1-45 { top: 1vmin; left: 1vmin; }
+.pin--1-46 { top: 1vmin; left: 1vmin; }
+.pin--1-47 { top: 1vmin; left: 1vmin; }
+.pin--1-48 { top: 1vmin; left: 1vmin; }
+.pin--1-49 { top: 1vmin; left: 1vmin; }
+.pin--1-50 { top: 1vmin; left: 1vmin; }
+.pin--1-51 { top: 1vmin; left: 1vmin; }
+.pin--1-52 { top: 1vmin; left: 1vmin; }
+.pin--1-53 { top: 1vmin; left: 1vmin; }
+.pin--1-54 { top: 1vmin; left: 1vmin; }
+.pin--1-55 { top: 1vmin; left: 1vmin; }
+.pin--1-56 { top: 1vmin; left: 1vmin; }
+.pin--1-57 { top: 1vmin; left: 1vmin; }
+.pin--1-58 { top: 1vmin; left: 1vmin; }
+.pin--1-59 { top: 1vmin; left: 1vmin; }
+.pin--1-60 { top: 1vmin; left: 1vmin; }
+.pin--1-61 { top: 1vmin; left: 1vmin; }
+.pin--1-62 { top: 1vmin; left: 1vmin; }
+.pin--1-63 { top: 1vmin; left: 1vmin; }
+.pin--1-64 { top: 1vmin; left: 1vmin; }
+.pin--1-65 { top: 1vmin; left: 1vmin; }
+.pin--1-66 { top: 1vmin; left: 1vmin; }
+.pin--1-67 { top: 1vmin; left: 1vmin; }
+.pin--1-68 { top: 1vmin; left: 1vmin; }
+.pin--1-69 { top: 1vmin; left: 1vmin; }
+.pin--1-70 { top: 1vmin; left: 1vmin; }
+.pin--1-71 { top: 1vmin; left: 1vmin; }
+.pin--1-72 { top: 1vmin; left: 1vmin; }
+.pin--1-73 { top: 1vmin; left: 1vmin; }
+.pin--1-74 { top: 1vmin; left: 1vmin; }
+.pin--1-75 { top: 1vmin; left: 1vmin; }
+.pin--1-76 { top: 1vmin; left: 1vmin; }
+.pin--1-77 { top: 1vmin; left: 1vmin; }
+.pin--1-78 { top: 1vmin; left: 1vmin; }
+.pin--1-79 { top: 1vmin; left: 1vmin; }
+.pin--1-80 { top: 1vmin; left: 1vmin; }
+.pin--1-81 { top: 1vmin; left: 1vmin; }
+.pin--1-82 { top: 1vmin; left: 1vmin; }
+.pin--1-83 { top: 1vmin; left: 1vmin; }
+.pin--1-84 { top: 1vmin; left: 1vmin; }
+.pin--1-85 { top: 1vmin; left: 1vmin; }
+.pin--1-86 { top: 1vmin; left: 1vmin; }
+.pin--1-87 { top: 1vmin; left: 1vmin; }
+.pin--1-88 { top: 1vmin; left: 1vmin; }
+.pin--1-89 { top: 1vmin; left: 1vmin; }
+.pin--1-90 { top: 1vmin; left: 1vmin; }
+.pin--1-91 { top: 1vmin; left: 1vmin; }
+.pin--1-92 { top: 1vmin; left: 1vmin; }
+.pin--1-93 { top: 1vmin; left: 1vmin; }
+.pin--1-94 { top: 1vmin; left: 1vmin; }
+.pin--1-95 { top: 1vmin; left: 1vmin; }
+.pin--1-96 { top: 1vmin; left: 1vmin; }
+.pin--1-97 { top: 1vmin; left: 1vmin; }
+.pin--1-98 { top: 1vmin; left: 1vmin; }
+.pin--1-99 { top: 1vmin; left: 1vmin; }
+
+/* Pins for floor 2 */
+.pin--2-1 { top: 1vmin; left: 1vmin; }
+.pin--2-2 { top: 1vmin; left: 1vmin; }
+.pin--2-3 { top: 1vmin; left: 1vmin; }
+.pin--2-4 { top: 1vmin; left: 1vmin; }
+.pin--2-5 { top: 1vmin; left: 1vmin; }
+.pin--2-6 { top: 1vmin; left: 1vmin; }
+.pin--2-7 { top: 1vmin; left: 1vmin; }
+.pin--2-8 { top: 1vmin; left: 1vmin; }
+.pin--2-9 { top: 1vmin; left: 1vmin; }
+.pin--2-10 { top: 1vmin; left: 1vmin; }
+.pin--2-11 { top: 1vmin; left: 1vmin; }
+.pin--2-12 { top: 1vmin; left: 1vmin; }
+.pin--2-13 { top: 1vmin; left: 1vmin; }
+.pin--2-14 { top: 1vmin; left: 1vmin; }
+.pin--2-15 { top: 1vmin; left: 1vmin; }
+.pin--2-16 { top: 1vmin; left: 1vmin; }
+.pin--2-17 { top: 1vmin; left: 1vmin; }
+.pin--2-18 { top: 1vmin; left: 1vmin; }
+.pin--2-19 { top: 1vmin; left: 1vmin; }
+.pin--2-20 { top: 1vmin; left: 1vmin; }
+.pin--2-21 { top: 1vmin; left: 1vmin; }
+.pin--2-22 { top: 1vmin; left: 1vmin; }
+.pin--2-23 { top: 1vmin; left: 1vmin; }
+.pin--2-24 { top: 1vmin; left: 1vmin; }
+.pin--2-25 { top: 1vmin; left: 1vmin; }
+.pin--2-26 { top: 1vmin; left: 1vmin; }
+.pin--2-27 { top: 1vmin; left: 1vmin; }
+.pin--2-28 { top: 1vmin; left: 1vmin; }
+.pin--2-29 { top: 1vmin; left: 1vmin; }
+.pin--2-30 { top: 1vmin; left: 1vmin; }
+.pin--2-31 { top: 1vmin; left: 1vmin; }
+.pin--2-32 { top: 1vmin; left: 1vmin; }
+.pin--2-33 { top: 1vmin; left: 1vmin; }
+.pin--2-34 { top: 1vmin; left: 1vmin; }
+.pin--2-35 { top: 1vmin; left: 1vmin; }
+.pin--2-36 { top: 1vmin; left: 1vmin; }
+.pin--2-37 { top: 1vmin; left: 1vmin; }
+.pin--2-38 { top: 1vmin; left: 1vmin; }
+.pin--2-39 { top: 1vmin; left: 1vmin; }
+.pin--2-40 { top: 1vmin; left: 1vmin; }
+.pin--2-41 { top: 1vmin; left: 1vmin; }
+.pin--2-42 { top: 1vmin; left: 1vmin; }
+.pin--2-43 { top: 1vmin; left: 1vmin; }
+.pin--2-44 { top: 1vmin; left: 1vmin; }
+.pin--2-45 { top: 1vmin; left: 1vmin; }
+.pin--2-46 { top: 1vmin; left: 1vmin; }
+.pin--2-47 { top: 1vmin; left: 1vmin; }
+.pin--2-48 { top: 1vmin; left: 1vmin; }
+.pin--2-49 { top: 1vmin; left: 1vmin; }
+.pin--2-50 { top: 1vmin; left: 1vmin; }
+.pin--2-51 { top: 1vmin; left: 1vmin; }
+.pin--2-52 { top: 1vmin; left: 1vmin; }
+.pin--2-53 { top: 1vmin; left: 1vmin; }
+.pin--2-54 { top: 1vmin; left: 1vmin; }
+.pin--2-55 { top: 1vmin; left: 1vmin; }
+.pin--2-56 { top: 1vmin; left: 1vmin; }
+.pin--2-57 { top: 1vmin; left: 1vmin; }
+.pin--2-58 { top: 1vmin; left: 1vmin; }
+.pin--2-59 { top: 1vmin; left: 1vmin; }
+.pin--2-60 { top: 1vmin; left: 1vmin; }
+.pin--2-61 { top: 1vmin; left: 1vmin; }
+.pin--2-62 { top: 1vmin; left: 1vmin; }
+.pin--2-63 { top: 1vmin; left: 1vmin; }
+.pin--2-64 { top: 1vmin; left: 1vmin; }
+.pin--2-65 { top: 1vmin; left: 1vmin; }
+.pin--2-66 { top: 1vmin; left: 1vmin; }
+.pin--2-67 { top: 1vmin; left: 1vmin; }
+.pin--2-68 { top: 1vmin; left: 1vmin; }
+.pin--2-69 { top: 1vmin; left: 1vmin; }
+.pin--2-70 { top: 1vmin; left: 1vmin; }
+.pin--2-71 { top: 1vmin; left: 1vmin; }
+.pin--2-72 { top: 1vmin; left: 1vmin; }
+.pin--2-73 { top: 1vmin; left: 1vmin; }
+.pin--2-74 { top: 1vmin; left: 1vmin; }
+.pin--2-75 { top: 1vmin; left: 1vmin; }
+.pin--2-76 { top: 1vmin; left: 1vmin; }
+.pin--2-77 { top: 1vmin; left: 1vmin; }
+.pin--2-78 { top: 1vmin; left: 1vmin; }
+.pin--2-79 { top: 1vmin; left: 1vmin; }
+.pin--2-80 { top: 1vmin; left: 1vmin; }
+.pin--2-81 { top: 1vmin; left: 1vmin; }
+.pin--2-82 { top: 1vmin; left: 1vmin; }
+.pin--2-83 { top: 1vmin; left: 1vmin; }
+.pin--2-84 { top: 1vmin; left: 1vmin; }
+.pin--2-85 { top: 1vmin; left: 1vmin; }
+.pin--2-86 { top: 1vmin; left: 1vmin; }
+.pin--2-87 { top: 1vmin; left: 1vmin; }
+.pin--2-88 { top: 1vmin; left: 1vmin; }
+.pin--2-89 { top: 1vmin; left: 1vmin; }
+.pin--2-90 { top: 1vmin; left: 1vmin; }
+.pin--2-91 { top: 1vmin; left: 1vmin; }
+.pin--2-92 { top: 1vmin; left: 1vmin; }
+.pin--2-93 { top: 1vmin; left: 1vmin; }
+.pin--2-94 { top: 1vmin; left: 1vmin; }
+.pin--2-95 { top: 1vmin; left: 1vmin; }
+.pin--2-96 { top: 1vmin; left: 1vmin; }
+.pin--2-97 { top: 1vmin; left: 1vmin; }
+.pin--2-98 { top: 1vmin; left: 1vmin; }
+.pin--2-99 { top: 1vmin; left: 1vmin; }
+
+/* Pins for floor 3 */
+.pin--3-1 { top: 104.5vmin; left: 113.5vmin; }
+.pin--3-2 { top: 104.5vmin; left: 107vmin; }
+.pin--3-3 { top: 104.5vmin; left: 100.5vmin; }
+.pin--3-4 { top: 104.5vmin; left: 94vmin; }
+.pin--3-5 { top: 104.5vmin; left: 87.5vmin; }
+.pin--3-6 { top: 104.5vmin; left: 82.5vmin; }
+.pin--3-7 { top: 104.5vmin; left: 76vmin; }
+.pin--3-8 { top: 104.5vmin; left: 70vmin; }
+.pin--3-9 { top: 104.5vmin; left: 62vmin; }
+.pin--3-10 { top: 104.5vmin; left: 52vmin; }
+.pin--3-11 { top: 123vmin; left: 87.5vmin; }
+.pin--3-12 { top: 120vmin; left: 87.5vmin; }
+.pin--3-13 { top: 115vmin; left: 87.5vmin; }
+.pin--3-14 { top: 123vmin; left: 84.5vmin; }
+.pin--3-15 { top: 120vmin; left: 84.5vmin; }
+.pin--3-16 { top: 115vmin; left: 84.5vmin; }
+.pin--3-17 { top: 123vmin; left: 79vmin; }
+.pin--3-18 { top: 120vmin; left: 79vmin; }
+.pin--3-19 { top: 115vmin; left: 79vmin; }
+.pin--3-20 { top: 123vmin; left: 76vmin; }
+.pin--3-21 { top: 120vmin; left: 76vmin; }
+.pin--3-22 { top: 115vmin; left: 76vmin; }
+.pin--3-23 { top: 123vmin; left: 70.5vmin; }
+.pin--3-24 { top: 120vmin; left: 70.5vmin; }
+.pin--3-25 { top: 115vmin; left: 70.5vmin; }
+.pin--3-26 { top: 123vmin; left: 67.5vmin; }
+.pin--3-27 { top: 120vmin; left: 67.5vmin; }
+.pin--3-28 { top: 115vmin; left: 67.5vmin; }
+.pin--3-29 { top: 123vmin; left: 62vmin; }
+.pin--3-30 { top: 120vmin; left: 62vmin; }
+.pin--3-31 { top: 115vmin; left: 62vmin; }
+.pin--3-32 { top: 123vmin; left: 59vmin; }
+.pin--3-33 { top: 120vmin; left: 59vmin; }
+.pin--3-34 { top: 115vmin; left: 59vmin; }
+.pin--3-35 { top: 123vmin; left: 53.5vmin; }
+.pin--3-36 { top: 120vmin; left: 53.5vmin; }
+.pin--3-37 { top: 115vmin; left: 53.5vmin; }
+.pin--3-38 { top: 123vmin; left: 50.5vmin; }
+.pin--3-39 { top: 120vmin; left: 50.5vmin; }
+.pin--3-40 { top: 115vmin; left: 50.5vmin; }
+.pin--3-41 { top: 123.5vmin; left: 43vmin; }
+.pin--3-42 { top: 123.5vmin; left: 35vmin; }
+.pin--3-43 { top: 123.5vmin; left: 27vmin; }
+.pin--3-44 { top: 115.5vmin; left: 43vmin; }
+.pin--3-45 { top: 119vmin; left: 43vmin; }
+.pin--3-46 { top: 115.5vmin; left: 34vmin; }
+.pin--3-47 { top: 119vmin; left: 34vmin; }
+.pin--3-48 { top: 115.5vmin; left: 31vmin; }
+.pin--3-49 { top: 119vmin; left: 31vmin; }
+.pin--3-50 { top: 115.5vmin; left: 26vmin; }
+.pin--3-51 { top: 119vmin; left: 26vmin; }
+.pin--3-52 { top: 85vmin; left: 26vmin; }
+.pin--3-53 { top: 78vmin; left: 26vmin; }
+.pin--3-54 { top: 71vmin; left: 26vmin; }
+.pin--3-55 { top: 91vmin; left: 18vmin; }
+.pin--3-56 { top: 91vmin; left: 14.5vmin; }
+.pin--3-57 { top: 91vmin; left: 11.5vmin; }
+.pin--3-58 { top: 91vmin; left: 8vmin; }
+.pin--3-59 { top: 84vmin; left: 18vmin; }
+.pin--3-60 { top: 84vmin; left: 14.5vmin; }
+.pin--3-61 { top: 84vmin; left: 11.5vmin; }
+.pin--3-62 { top: 84vmin; left: 8vmin; }
+.pin--3-63 { top: 80.5vmin; left: 18vmin; }
+.pin--3-64 { top: 80.5vmin; left: 14.5vmin; }
+.pin--3-65 { top: 80.5vmin; left: 11.5vmin; }
+.pin--3-66 { top: 80.5vmin; left: 8vmin; }
+.pin--3-67 { top: 73.5vmin; left: 18vmin; }
+.pin--3-68 { top: 73.5vmin; left: 11.5vmin; }
+.pin--3-69 { top: 73.5vmin; left: 8vmin; }
+.pin--3-70 { top: 70vmin; left: 18vmin; }
+.pin--3-71 { top: 70vmin; left: 11.5vmin; }
+.pin--3-72 { top: 70vmin; left: 8vmin; }
+.pin--3-73 { top: 63vmin; left: 26vmin; }
+.pin--3-74 { top: 63vmin; left: 19vmin; }
+.pin--3-75 { top: 63vmin; left: 13vmin; }
+.pin--3-76 { top: 63vmin; left: 9vmin; }
+.pin--3-77 { top: 60vmin; left: 19vmin; }
+.pin--3-78 { top: 60vmin; left: 13vmin; }
+.pin--3-79 { top: 60vmin; left: 9vmin; }
+.pin--3-80 { top: 54vmin; left: 19vmin; }
+.pin--3-81 { top: 54vmin; left: 13vmin; }
+.pin--3-82 { top: 54vmin; left: 9vmin; }
+.pin--3-83 { top: 51vmin; left: 19vmin; }
+.pin--3-84 { top: 51vmin; left: 13vmin; }
+.pin--3-85 { top: 51vmin; left: 9vmin; }
+.pin--3-86 { top: 36vmin; left: 26vmin; }
+.pin--3-87 { top: 29vmin; left: 26vmin; }
+.pin--3-88 { top: 22vmin; left: 26vmin; }
+.pin--3-89 { top: 16vmin; left: 26vmin; }
+.pin--3-90 { top: 30vmin; left: 17vmin; }
+.pin--3-91 { top: 27vmin; left: 17vmin; }
+.pin--3-92 { top: 24vmin; left: 17vmin; }
+.pin--3-93 { top: 21vmin; left: 17vmin; }
+.pin--3-94 { top: 30vmin; left: 12vmin; }
+.pin--3-95 { top: 27vmin; left: 12vmin; }
+.pin--3-96 { top: 24vmin; left: 12vmin; }
+.pin--3-97 { top: 21vmin; left: 12vmin; }
+
+/* Pins for floor 4 */
+.pin--4-1 { top: 110vmin; left: 115vmin; }
+.pin--4-2 { top: 120vmin; left: 86vmin; }
+.pin--4-3 { top: 120vmin; left: 78vmin; }
+.pin--4-4 { top: 125vmin; left: 97vmin; }
+.pin--4-5 { top: 125vmin; left: 105vmin; }
+.pin--4-6 { top: 81vmin; left: 26vmin; }
+.pin--4-7 { top: 74vmin; left: 26vmin; }
+.pin--4-8 { top: 67vmin; left: 26vmin; }
+.pin--4-9 { top: 60vmin; left: 26vmin; }
+.pin--4-10 { top: 80vmin; left: 19vmin; }
+.pin--4-11 { top: 77vmin; left: 19vmin; }
+.pin--4-12 { top: 74vmin; left: 19vmin; }
+.pin--4-13 { top: 67vmin; left: 19vmin; }
+.pin--4-14 { top: 64vmin; left: 19vmin; }
+.pin--4-15 { top: 61vmin; left: 19vmin; }
+.pin--4-16 { top: 80vmin; left: 16vmin; }
+.pin--4-17 { top: 77vmin; left: 16vmin; }
+.pin--4-18 { top: 74vmin; left: 16vmin; }
+.pin--4-19 { top: 67vmin; left: 16vmin; }
+.pin--4-20 { top: 64vmin; left: 16vmin; }
+.pin--4-21 { top: 61vmin; left: 16vmin; }
+.pin--4-22 { top: 80vmin; left: 13vmin; }
+.pin--4-23 { top: 77vmin; left: 13vmin; }
+.pin--4-24 { top: 74vmin; left: 13vmin; }
+.pin--4-25 { top: 67vmin; left: 13vmin; }
+.pin--4-26 { top: 64vmin; left: 13vmin; }
+.pin--4-27 { top: 61vmin; left: 13vmin; }
+.pin--4-28 { top: 80vmin; left: 10vmin; }
+.pin--4-29 { top: 77vmin; left: 10vmin; }
+.pin--4-30 { top: 74vmin; left: 10vmin; }
+.pin--4-31 { top: 67vmin; left: 10vmin; }
+.pin--4-32 { top: 64vmin; left: 10vmin; }
+.pin--4-33 { top: 61vmin; left: 10vmin; }
+.pin--4-34 { top: 54vmin; left: 26vmin; }
+.pin--4-35 { top: 47vmin; left: 26vmin; }
+.pin--4-36 { top: 38vmin; left: 26vmin; }
+.pin--4-37 { top: 53vmin; left: 19vmin; }
+.pin--4-38 { top: 50vmin; left: 19vmin; }
+.pin--4-39 { top: 44vmin; left: 19vmin; }
+.pin--4-40 { top: 41vmin; left: 19vmin; }
+.pin--4-41 { top: 38vmin; left: 19vmin; }
+.pin--4-42 { top: 53vmin; left: 16vmin; }
+.pin--4-43 { top: 50vmin; left: 16vmin; }
+.pin--4-44 { top: 44vmin; left: 16vmin; }
+.pin--4-45 { top: 41vmin; left: 16vmin; }
+.pin--4-46 { top: 38vmin; left: 16vmin; }
+.pin--4-47 { top: 53vmin; left: 13vmin; }
+.pin--4-48 { top: 50vmin; left: 13vmin; }
+.pin--4-49 { top: 44vmin; left: 13vmin; }
+.pin--4-50 { top: 41vmin; left: 13vmin; }
+.pin--4-51 { top: 38vmin; left: 13vmin; }
+.pin--4-52 { top: 53vmin; left: 10vmin; }
+.pin--4-53 { top: 50vmin; left: 10vmin; }
+.pin--4-54 { top: 44vmin; left: 10vmin; }
+.pin--4-55 { top: 41vmin; left: 10vmin; }
+.pin--4-56 { top: 38vmin; left: 10vmin; }
+.pin--4-57 { top: 30vmin; left: 26vmin; }
+.pin--4-58 { top: 23vmin; left: 26vmin; }
+.pin--4-59 { top: 10vmin; left: 26vmin; }
+.pin--4-60 { top: 28vmin; left: 19vmin; }
+.pin--4-61 { top: 25vmin; left: 19vmin; }
+.pin--4-62 { top: 22vmin; left: 19vmin; }
+.pin--4-63 { top: 28vmin; left: 16vmin; }
+.pin--4-64 { top: 25vmin; left: 16vmin; }
+.pin--4-65 { top: 22vmin; left: 16vmin; }
+.pin--4-66 { top: 28vmin; left: 13vmin; }
+.pin--4-67 { top: 25vmin; left: 13vmin; }
+.pin--4-68 { top: 22vmin; left: 13vmin; }
+.pin--4-69 { top: 28vmin; left: 10vmin; }
+.pin--4-70 { top: 25vmin; left: 10vmin; }
+.pin--4-71 { top: 22vmin; left: 10vmin; }
+
+/* Pins for floor 4 */
+.pin--5-1 { top: 1vmin; left: 1vmin; }
+.pin--5-2 { top: 1vmin; left: 1vmin; }
+.pin--5-3 { top: 1vmin; left: 1vmin; }
+.pin--5-4 { top: 1vmin; left: 1vmin; }
+.pin--5-5 { top: 1vmin; left: 1vmin; }
+.pin--5-6 { top: 1vmin; left: 1vmin; }
+.pin--5-7 { top: 1vmin; left: 1vmin; }
+.pin--5-8 { top: 1vmin; left: 1vmin; }
+.pin--5-9 { top: 1vmin; left: 1vmin; }
+.pin--5-10 { top: 1vmin; left: 1vmin; }
+.pin--5-11 { top: 1vmin; left: 1vmin; }
+.pin--5-12 { top: 1vmin; left: 1vmin; }
+.pin--5-13 { top: 1vmin; left: 1vmin; }
+.pin--5-14 { top: 1vmin; left: 1vmin; }
+.pin--5-15 { top: 1vmin; left: 1vmin; }
+.pin--5-16 { top: 1vmin; left: 1vmin; }
+.pin--5-17 { top: 1vmin; left: 1vmin; }
+.pin--5-18 { top: 1vmin; left: 1vmin; }
+.pin--5-19 { top: 1vmin; left: 1vmin; }
+.pin--5-20 { top: 1vmin; left: 1vmin; }
+.pin--5-21 { top: 1vmin; left: 1vmin; }
+.pin--5-22 { top: 1vmin; left: 1vmin; }
+.pin--5-23 { top: 1vmin; left: 1vmin; }
+.pin--5-24 { top: 1vmin; left: 1vmin; }
+.pin--5-25 { top: 1vmin; left: 1vmin; }
+.pin--5-26 { top: 1vmin; left: 1vmin; }
+.pin--5-27 { top: 1vmin; left: 1vmin; }
+.pin--5-28 { top: 1vmin; left: 1vmin; }
+.pin--5-29 { top: 1vmin; left: 1vmin; }
+.pin--5-30 { top: 1vmin; left: 1vmin; }
+.pin--5-31 { top: 1vmin; left: 1vmin; }
+.pin--5-32 { top: 1vmin; left: 1vmin; }
+.pin--5-33 { top: 1vmin; left: 1vmin; }
+.pin--5-34 { top: 1vmin; left: 1vmin; }
+.pin--5-35 { top: 1vmin; left: 1vmin; }
+.pin--5-36 { top: 1vmin; left: 1vmin; }
+.pin--5-37 { top: 1vmin; left: 1vmin; }
+.pin--5-38 { top: 1vmin; left: 1vmin; }
+.pin--5-39 { top: 1vmin; left: 1vmin; }
+.pin--5-40 { top: 1vmin; left: 1vmin; }
+.pin--5-41 { top: 1vmin; left: 1vmin; }
+.pin--5-42 { top: 1vmin; left: 1vmin; }
+.pin--5-43 { top: 1vmin; left: 1vmin; }
+.pin--5-44 { top: 1vmin; left: 1vmin; }
+.pin--5-45 { top: 1vmin; left: 1vmin; }
+.pin--5-46 { top: 1vmin; left: 1vmin; }
+.pin--5-47 { top: 1vmin; left: 1vmin; }
+.pin--5-48 { top: 1vmin; left: 1vmin; }
+.pin--5-49 { top: 1vmin; left: 1vmin; }
+.pin--5-50 { top: 1vmin; left: 1vmin; }
+.pin--5-51 { top: 1vmin; left: 1vmin; }
+.pin--5-52 { top: 1vmin; left: 1vmin; }
+.pin--5-53 { top: 1vmin; left: 1vmin; }
+.pin--5-54 { top: 1vmin; left: 1vmin; }
+.pin--5-55 { top: 1vmin; left: 1vmin; }
+.pin--5-56 { top: 1vmin; left: 1vmin; }
+.pin--5-57 { top: 1vmin; left: 1vmin; }
+.pin--5-58 { top: 1vmin; left: 1vmin; }
+.pin--5-59 { top: 1vmin; left: 1vmin; }
+.pin--5-60 { top: 1vmin; left: 1vmin; }
+.pin--5-61 { top: 1vmin; left: 1vmin; }
+.pin--5-62 { top: 1vmin; left: 1vmin; }
+.pin--5-63 { top: 1vmin; left: 1vmin; }
+.pin--5-64 { top: 1vmin; left: 1vmin; }
+.pin--5-65 { top: 1vmin; left: 1vmin; }
+.pin--5-66 { top: 1vmin; left: 1vmin; }
+.pin--5-67 { top: 1vmin; left: 1vmin; }
+.pin--5-68 { top: 1vmin; left: 1vmin; }
+.pin--5-69 { top: 1vmin; left: 1vmin; }
+.pin--5-70 { top: 1vmin; left: 1vmin; }
+.pin--5-71 { top: 1vmin; left: 1vmin; }
+.pin--5-72 { top: 1vmin; left: 1vmin; }
+.pin--5-73 { top: 1vmin; left: 1vmin; }
+.pin--5-74 { top: 1vmin; left: 1vmin; }
+.pin--5-75 { top: 1vmin; left: 1vmin; }
+.pin--5-76 { top: 1vmin; left: 1vmin; }
+.pin--5-77 { top: 1vmin; left: 1vmin; }
+.pin--5-78 { top: 1vmin; left: 1vmin; }
+.pin--5-79 { top: 1vmin; left: 1vmin; }
+.pin--5-80 { top: 1vmin; left: 1vmin; }
+.pin--5-81 { top: 1vmin; left: 1vmin; }
+.pin--5-82 { top: 1vmin; left: 1vmin; }
+.pin--5-83 { top: 1vmin; left: 1vmin; }
+.pin--5-84 { top: 1vmin; left: 1vmin; }
+.pin--5-85 { top: 1vmin; left: 1vmin; }
+.pin--5-86 { top: 1vmin; left: 1vmin; }
+.pin--5-87 { top: 1vmin; left: 1vmin; }
+.pin--5-88 { top: 1vmin; left: 1vmin; }
+.pin--5-89 { top: 1vmin; left: 1vmin; }
+.pin--5-90 { top: 1vmin; left: 1vmin; }
+.pin--5-91 { top: 1vmin; left: 1vmin; }
+.pin--5-92 { top: 1vmin; left: 1vmin; }
+.pin--5-93 { top: 1vmin; left: 1vmin; }
+.pin--5-94 { top: 1vmin; left: 1vmin; }
+.pin--5-95 { top: 1vmin; left: 1vmin; }
+.pin--5-96 { top: 1vmin; left: 1vmin; }
+.pin--5-97 { top: 1vmin; left: 1vmin; }
+.pin--5-98 { top: 1vmin; left: 1vmin; }
+.pin--5-99 { top: 1vmin; left: 1vmin; }
+
+
+/* Mobile compatability */
+.open-search,
+.close-search {
+	display: none;
+}
+
+@media screen and (max-width: 100em), screen and (max-height: 100em) {
+	.main {
+		width: 100vw;
+	}
+	.spaces-list,
+	.search {
+		width: 100vw;
+		right: 100%;
+		left: auto;
+	}
+	.spaces-list--open,
+	.spaces-list--open .search {
+		right: 0;
+	}
+	.open-search,
+	.close-search {
+		position: absolute;
+		display: block;
+		top: 0;
+		right: 0;
+		z-index: 1000;
+	}
+	.mallnav {
+		top: 4em;
+	}
+	.container {
+		overflow: hidden;
+	}
+	.container--overflow {
+		overflow: auto;
+	}
+	.codrops-header {
+		padding-right: 4em;
+		text-align: left;
+	}
+}
