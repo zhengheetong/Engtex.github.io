@@ -4,7 +4,7 @@ $.ajax(
 {type: 'GET',
 datatype: 'JSON',
 async: false,
-url:"https://zhengheetong.github.io/src/Employee%20Location.json",
+url:"src/Employee%20Location.json",
 success: function(data){
 	data.forEach(function(item){
 		const id = item["Sit ID"].toString();
