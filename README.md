@@ -10,7 +10,7 @@
 
 ## Guide to add more record
 1. (First Method)Download this [file](https://docs.google.com/spreadsheets/d/1ZGXwFEYu1BIkftP_aJZhwzuZdN_ROidN/edit?usp=share_link&ouid=104378173493166339763&rtpof=true&sd=true) for already made template. 
-(Second Method)Create a new Excel file, Import data from web by using this [link](https://engtex.github.io/src/Employee Location.json) the latest updated data.
+(Second Method)Create a new Excel file, Import data from web by using this [link](https://engtex.github.io/src/Employee%20Location.json) the latest updated data.
 2. go to this [link](https://engtex.github.io) to find the location of employee sitting and get the Sit ID.
 3. Upload the image to google drive, get and paste the link of the image into to excel file together with other information such as, Sit ID, Name, Status, Extension, Phone Number, Email, Image.
 4. Export the excel file as CSV file
