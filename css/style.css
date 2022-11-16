@@ -331,9 +331,13 @@ button:focus {
 .levels--selected-2 .level--1,
 .levels--selected-3 .level--1,
 .levels--selected-4 .level--1,
+.levels--selected-5 .level--1,
 .levels--selected-3 .level--2,
 .levels--selected-4 .level--2,
-.levels--selected-4 .level--3 {
+.levels--selected-5 .level--2,
+.levels--selected-4 .level--3, 
+.levels--selected-5 .level--3,
+.levels--selected-5 .level--4{
 	-webkit-transform: translateZ(-60vmin);
 	transform: translateZ(-60vmin);
 }
@@ -354,15 +358,17 @@ button:focus {
 .levels--selected-2 .level--current::after,
 .levels--selected-3 .level--current,
 .levels--selected-3 .level--current::after,
-.levels--selected-4 .level--3 {
+.levels--selected-4 .level--current,
+.levels--selected-4 .level--current::after,
+.levels--selected-5 .level--4 {
 	-webkit-transition-delay: 0.25s;
 	transition-delay: 0.25s;
 }
 
 .levels--selected-1 .level--current,
 .levels--selected-1 .level--current::after,
-.levels--selected-4 .level--current,
-.levels--selected-4 .level--current::after {
+.levels--selected-5 .level--current,
+.levels--selected-5 .level--current::after {
 	-webkit-transition-delay: 0.45s;
 	transition-delay: 0.45s;
 }
@@ -473,6 +479,10 @@ button:focus {
 	transition: fill-opacity 0.8s;
 	fill: #C4A484;
 	fill-opacity: 0.6;
+}
+
+.map__seat--selected{
+	fill: #00FF00;
 }
 
 .level:hover .map__outline,
@@ -973,175 +983,168 @@ button:focus {
 .pin--1-29 { top: 117vmin; left: 80.5vmin; }
 .pin--1-30 { top: 117vmin; left: 77.5vmin; }
 .pin--1-31 { top: 117vmin; left: 74.5vmin; }
-.pin--1-32 { top: 1vmin; left: 1vmin; }
-.pin--1-33 { top: 1vmin; left: 1vmin; }
-.pin--1-34 { top: 1vmin; left: 1vmin; }
-.pin--1-35 { top: 1vmin; left: 1vmin; }
-.pin--1-36 { top: 1vmin; left: 1vmin; }
-.pin--1-37 { top: 1vmin; left: 1vmin; }
-.pin--1-38 { top: 1vmin; left: 1vmin; }
-.pin--1-39 { top: 1vmin; left: 1vmin; }
-.pin--1-40 { top: 1vmin; left: 1vmin; }
-.pin--1-41 { top: 1vmin; left: 1vmin; }
-.pin--1-42 { top: 1vmin; left: 1vmin; }
-.pin--1-43 { top: 1vmin; left: 1vmin; }
-.pin--1-44 { top: 1vmin; left: 1vmin; }
-.pin--1-45 { top: 1vmin; left: 1vmin; }
-.pin--1-46 { top: 1vmin; left: 1vmin; }
-.pin--1-47 { top: 1vmin; left: 1vmin; }
-.pin--1-48 { top: 1vmin; left: 1vmin; }
-.pin--1-49 { top: 1vmin; left: 1vmin; }
-.pin--1-50 { top: 1vmin; left: 1vmin; }
-.pin--1-51 { top: 1vmin; left: 1vmin; }
-.pin--1-52 { top: 1vmin; left: 1vmin; }
-.pin--1-53 { top: 1vmin; left: 1vmin; }
-.pin--1-54 { top: 1vmin; left: 1vmin; }
-.pin--1-55 { top: 1vmin; left: 1vmin; }
-.pin--1-56 { top: 1vmin; left: 1vmin; }
-.pin--1-57 { top: 1vmin; left: 1vmin; }
-.pin--1-58 { top: 1vmin; left: 1vmin; }
-.pin--1-59 { top: 1vmin; left: 1vmin; }
-.pin--1-60 { top: 1vmin; left: 1vmin; }
-.pin--1-61 { top: 1vmin; left: 1vmin; }
-.pin--1-62 { top: 1vmin; left: 1vmin; }
-.pin--1-63 { top: 1vmin; left: 1vmin; }
-.pin--1-64 { top: 1vmin; left: 1vmin; }
-.pin--1-65 { top: 1vmin; left: 1vmin; }
-.pin--1-66 { top: 1vmin; left: 1vmin; }
-.pin--1-67 { top: 1vmin; left: 1vmin; }
-.pin--1-68 { top: 1vmin; left: 1vmin; }
-.pin--1-69 { top: 1vmin; left: 1vmin; }
-.pin--1-70 { top: 1vmin; left: 1vmin; }
-.pin--1-71 { top: 1vmin; left: 1vmin; }
-.pin--1-72 { top: 1vmin; left: 1vmin; }
-.pin--1-73 { top: 1vmin; left: 1vmin; }
-.pin--1-74 { top: 1vmin; left: 1vmin; }
-.pin--1-75 { top: 1vmin; left: 1vmin; }
-.pin--1-76 { top: 1vmin; left: 1vmin; }
-.pin--1-77 { top: 1vmin; left: 1vmin; }
-.pin--1-78 { top: 1vmin; left: 1vmin; }
-.pin--1-79 { top: 1vmin; left: 1vmin; }
-.pin--1-80 { top: 1vmin; left: 1vmin; }
-.pin--1-81 { top: 1vmin; left: 1vmin; }
-.pin--1-82 { top: 1vmin; left: 1vmin; }
-.pin--1-83 { top: 1vmin; left: 1vmin; }
-.pin--1-84 { top: 1vmin; left: 1vmin; }
-.pin--1-85 { top: 1vmin; left: 1vmin; }
-.pin--1-86 { top: 1vmin; left: 1vmin; }
-.pin--1-87 { top: 1vmin; left: 1vmin; }
-.pin--1-88 { top: 1vmin; left: 1vmin; }
-.pin--1-89 { top: 1vmin; left: 1vmin; }
-.pin--1-90 { top: 1vmin; left: 1vmin; }
-.pin--1-91 { top: 1vmin; left: 1vmin; }
-.pin--1-92 { top: 1vmin; left: 1vmin; }
-.pin--1-93 { top: 1vmin; left: 1vmin; }
-.pin--1-94 { top: 1vmin; left: 1vmin; }
-.pin--1-95 { top: 1vmin; left: 1vmin; }
-.pin--1-96 { top: 1vmin; left: 1vmin; }
-.pin--1-97 { top: 1vmin; left: 1vmin; }
-.pin--1-98 { top: 1vmin; left: 1vmin; }
-.pin--1-99 { top: 1vmin; left: 1vmin; }
+.pin--1-32 { top: 87vmin; left: 26vmin; }
+.pin--1-33 { top: 78.5vmin; left: 26vmin; }
+.pin--1-34 { top: 70vmin; left: 26vmin; }
+.pin--1-35 { top: 61.5vmin; left: 26vmin; }
+.pin--1-36 { top: 53vmin; left: 26vmin; }
+.pin--1-37 { top: 44.5vmin; left: 26vmin; }
+.pin--1-38 { top: 36vmin; left: 26vmin; }
+.pin--1-39 { top: 27.5vmin; left: 26vmin; }
+.pin--1-40 { top: 16.5vmin; left: 26vmin; }
+.pin--1-41 { top: 6.5vmin; left: 22vmin; }
+.pin--1-42 { top: 89vmin; left: 10.5vmin; }
+.pin--1-43 { top: 89vmin; left: 7.5vmin; }
+.pin--1-44 { top: 83vmin; left: 16.5vmin; }
+.pin--1-45 { top: 83vmin; left: 13.5vmin; }
+.pin--1-46 { top: 83vmin; left: 10.5vmin; }
+.pin--1-47 { top: 83vmin; left: 7.5vmin; }
+.pin--1-48 { top: 77vmin; left: 16.5vmin; }
+.pin--1-49 { top: 77vmin; left: 10.5vmin; }
+.pin--1-50 { top: 77vmin; left: 7.5vmin; }
+.pin--1-51 { top: 74vmin; left: 16.5vmin; }
+.pin--1-52 { top: 74vmin; left: 10.5vmin; }
+.pin--1-53 { top: 74vmin; left: 7.5vmin; }
+.pin--1-54 { top: 67vmin; left: 16.5vmin; }
+.pin--1-55 { top: 67vmin; left: 13.5vmin; }
+.pin--1-56 { top: 67vmin; left: 10.5vmin; }
+.pin--1-57 { top: 67vmin; left: 7.5vmin; }
+.pin--1-58 { top: 64vmin; left: 16.5vmin; }
+.pin--1-59 { top: 64vmin; left: 13.5vmin; }
+.pin--1-60 { top: 64vmin; left: 10.5vmin; }
+.pin--1-61 { top: 64vmin; left: 7.5vmin; }
+.pin--1-62 { top: 58vmin; left: 16.5vmin; }
+.pin--1-63 { top: 58vmin; left: 10.5vmin; }
+.pin--1-64 { top: 58vmin; left: 7.5vmin; }
+.pin--1-65 { top: 52vmin; left: 16.5vmin; }
+.pin--1-66 { top: 52vmin; left: 13.5vmin; }
+.pin--1-67 { top: 52vmin; left: 10.5vmin; }
+.pin--1-68 { top: 52vmin; left: 7.5vmin; }
+.pin--1-69 { top: 49vmin; left: 16.5vmin; }
+.pin--1-70 { top: 49vmin; left: 13.5vmin; }
+.pin--1-71 { top: 49vmin; left: 10.5vmin; }
+.pin--1-72 { top: 49vmin; left: 7.5vmin; }
+.pin--1-73 { top: 43vmin; left: 16.5vmin; }
+.pin--1-74 { top: 43vmin; left: 13.5vmin; }
+.pin--1-75 { top: 43vmin; left: 10.5vmin; }
+.pin--1-76 { top: 43vmin; left: 7.5vmin; }
+.pin--1-77 { top: 36vmin; left: 16.5vmin; }
+.pin--1-78 { top: 36vmin; left: 10.5vmin; }
+.pin--1-79 { top: 36vmin; left: 7.5vmin; }
+.pin--1-80 { top: 33vmin; left: 16.5vmin; }
+.pin--1-81 { top: 33vmin; left: 10.5vmin; }
+.pin--1-82 { top: 33vmin; left: 7.5vmin; }
+.pin--1-83 { top: 27vmin; left: 13.5vmin; }
+.pin--1-84 { top: 27vmin; left: 10.5vmin; }
+.pin--1-85 { top: 27vmin; left: 7.5vmin; }
+.pin--1-86 { top: 24vmin; left: 13.5vmin; }
+.pin--1-87 { top: 24vmin; left: 10.5vmin; }
+.pin--1-88 { top: 24vmin; left: 7.5vmin; }
+.pin--1-89 { top: 18vmin; left: 13.5vmin; }
+.pin--1-90 { top: 18vmin; left: 10.5vmin; }
+.pin--1-91 { top: 18vmin; left: 7.5vmin; }
+.pin--1-92 { top: 12vmin; left: 13.5vmin; }
+.pin--1-93 { top: 12vmin; left: 10.5vmin; }
 
 /* Pins for floor 2 */
-.pin--2-1 { top: 1vmin; left: 1vmin; }
-.pin--2-2 { top: 1vmin; left: 1vmin; }
-.pin--2-3 { top: 1vmin; left: 1vmin; }
-.pin--2-4 { top: 1vmin; left: 1vmin; }
-.pin--2-5 { top: 1vmin; left: 1vmin; }
-.pin--2-6 { top: 1vmin; left: 1vmin; }
-.pin--2-7 { top: 1vmin; left: 1vmin; }
-.pin--2-8 { top: 1vmin; left: 1vmin; }
-.pin--2-9 { top: 1vmin; left: 1vmin; }
-.pin--2-10 { top: 1vmin; left: 1vmin; }
-.pin--2-11 { top: 1vmin; left: 1vmin; }
-.pin--2-12 { top: 1vmin; left: 1vmin; }
-.pin--2-13 { top: 1vmin; left: 1vmin; }
-.pin--2-14 { top: 1vmin; left: 1vmin; }
-.pin--2-15 { top: 1vmin; left: 1vmin; }
-.pin--2-16 { top: 1vmin; left: 1vmin; }
-.pin--2-17 { top: 1vmin; left: 1vmin; }
-.pin--2-18 { top: 1vmin; left: 1vmin; }
-.pin--2-19 { top: 1vmin; left: 1vmin; }
-.pin--2-20 { top: 1vmin; left: 1vmin; }
-.pin--2-21 { top: 1vmin; left: 1vmin; }
-.pin--2-22 { top: 1vmin; left: 1vmin; }
-.pin--2-23 { top: 1vmin; left: 1vmin; }
-.pin--2-24 { top: 1vmin; left: 1vmin; }
-.pin--2-25 { top: 1vmin; left: 1vmin; }
-.pin--2-26 { top: 1vmin; left: 1vmin; }
-.pin--2-27 { top: 1vmin; left: 1vmin; }
-.pin--2-28 { top: 1vmin; left: 1vmin; }
-.pin--2-29 { top: 1vmin; left: 1vmin; }
-.pin--2-30 { top: 1vmin; left: 1vmin; }
-.pin--2-31 { top: 1vmin; left: 1vmin; }
-.pin--2-32 { top: 1vmin; left: 1vmin; }
-.pin--2-33 { top: 1vmin; left: 1vmin; }
-.pin--2-34 { top: 1vmin; left: 1vmin; }
-.pin--2-35 { top: 1vmin; left: 1vmin; }
-.pin--2-36 { top: 1vmin; left: 1vmin; }
-.pin--2-37 { top: 1vmin; left: 1vmin; }
-.pin--2-38 { top: 1vmin; left: 1vmin; }
-.pin--2-39 { top: 1vmin; left: 1vmin; }
-.pin--2-40 { top: 1vmin; left: 1vmin; }
-.pin--2-41 { top: 1vmin; left: 1vmin; }
-.pin--2-42 { top: 1vmin; left: 1vmin; }
-.pin--2-43 { top: 1vmin; left: 1vmin; }
-.pin--2-44 { top: 1vmin; left: 1vmin; }
-.pin--2-45 { top: 1vmin; left: 1vmin; }
-.pin--2-46 { top: 1vmin; left: 1vmin; }
-.pin--2-47 { top: 1vmin; left: 1vmin; }
-.pin--2-48 { top: 1vmin; left: 1vmin; }
-.pin--2-49 { top: 1vmin; left: 1vmin; }
-.pin--2-50 { top: 1vmin; left: 1vmin; }
-.pin--2-51 { top: 1vmin; left: 1vmin; }
-.pin--2-52 { top: 1vmin; left: 1vmin; }
-.pin--2-53 { top: 1vmin; left: 1vmin; }
-.pin--2-54 { top: 1vmin; left: 1vmin; }
-.pin--2-55 { top: 1vmin; left: 1vmin; }
-.pin--2-56 { top: 1vmin; left: 1vmin; }
-.pin--2-57 { top: 1vmin; left: 1vmin; }
-.pin--2-58 { top: 1vmin; left: 1vmin; }
-.pin--2-59 { top: 1vmin; left: 1vmin; }
-.pin--2-60 { top: 1vmin; left: 1vmin; }
-.pin--2-61 { top: 1vmin; left: 1vmin; }
-.pin--2-62 { top: 1vmin; left: 1vmin; }
-.pin--2-63 { top: 1vmin; left: 1vmin; }
-.pin--2-64 { top: 1vmin; left: 1vmin; }
-.pin--2-65 { top: 1vmin; left: 1vmin; }
-.pin--2-66 { top: 1vmin; left: 1vmin; }
-.pin--2-67 { top: 1vmin; left: 1vmin; }
-.pin--2-68 { top: 1vmin; left: 1vmin; }
-.pin--2-69 { top: 1vmin; left: 1vmin; }
-.pin--2-70 { top: 1vmin; left: 1vmin; }
-.pin--2-71 { top: 1vmin; left: 1vmin; }
-.pin--2-72 { top: 1vmin; left: 1vmin; }
-.pin--2-73 { top: 1vmin; left: 1vmin; }
-.pin--2-74 { top: 1vmin; left: 1vmin; }
-.pin--2-75 { top: 1vmin; left: 1vmin; }
-.pin--2-76 { top: 1vmin; left: 1vmin; }
-.pin--2-77 { top: 1vmin; left: 1vmin; }
-.pin--2-78 { top: 1vmin; left: 1vmin; }
-.pin--2-79 { top: 1vmin; left: 1vmin; }
-.pin--2-80 { top: 1vmin; left: 1vmin; }
-.pin--2-81 { top: 1vmin; left: 1vmin; }
-.pin--2-82 { top: 1vmin; left: 1vmin; }
-.pin--2-83 { top: 1vmin; left: 1vmin; }
-.pin--2-84 { top: 1vmin; left: 1vmin; }
-.pin--2-85 { top: 1vmin; left: 1vmin; }
-.pin--2-86 { top: 1vmin; left: 1vmin; }
-.pin--2-87 { top: 1vmin; left: 1vmin; }
-.pin--2-88 { top: 1vmin; left: 1vmin; }
-.pin--2-89 { top: 1vmin; left: 1vmin; }
-.pin--2-90 { top: 1vmin; left: 1vmin; }
-.pin--2-91 { top: 1vmin; left: 1vmin; }
-.pin--2-92 { top: 1vmin; left: 1vmin; }
-.pin--2-93 { top: 1vmin; left: 1vmin; }
-.pin--2-94 { top: 1vmin; left: 1vmin; }
-.pin--2-95 { top: 1vmin; left: 1vmin; }
-.pin--2-96 { top: 1vmin; left: 1vmin; }
-.pin--2-97 { top: 1vmin; left: 1vmin; }
-.pin--2-98 { top: 1vmin; left: 1vmin; }
-.pin--2-99 { top: 1vmin; left: 1vmin; }
+.pin--2-1 { top: 105vmin; left: 139vmin; }
+.pin--2-2 { top: 106vmin; left: 132vmin; }
+.pin--2-3 { top: 106vmin; left: 129vmin; }
+.pin--2-4 { top: 107.5vmin; left: 121vmin; }
+.pin--2-5 { top: 104.5vmin; left: 121vmin; }
+.pin--2-6 { top: 107.5vmin; left: 115vmin; }
+.pin--2-7 { top: 104.5vmin; left: 115vmin; }
+.pin--2-8 { top: 115vmin; left: 139.5vmin; }
+.pin--2-9 { top: 118vmin; left: 139.5vmin; }
+.pin--2-10 { top: 115vmin; left: 134.5vmin; }
+.pin--2-11 { top: 118vmin; left: 134.5vmin; }
+.pin--2-12 { top: 115vmin; left: 131.5vmin; }
+.pin--2-13 { top: 115.5vmin; left: 125vmin; }
+.pin--2-14 { top: 115.5vmin; left: 122vmin; }
+.pin--2-15 { top: 104.5vmin; left: 105.5vmin; }
+.pin--2-16 { top: 104.5vmin; left: 97.5vmin; }
+.pin--2-17 { top: 104.5vmin; left: 89.5vmin; }
+.pin--2-18 { top: 104.5vmin; left: 81.5vmin; }
+.pin--2-19 { top: 104.5vmin; left: 73.5vmin; }
+.pin--2-20 { top: 104.5vmin; left: 65.5vmin; }
+.pin--2-21 { top: 104.5vmin; left: 54.5vmin; }
+.pin--2-22 { top: 110.5vmin; left: 95vmin; }
+.pin--2-23 { top: 110.5vmin; left: 92vmin; }
+.pin--2-24 { top: 120vmin; left: 92vmin; }
+.pin--2-25 { top: 123vmin; left: 92vmin; }
+.pin--2-26 { top: 120vmin; left: 87vmin; }
+.pin--2-27 { top: 123vmin; left: 87vmin; }
+.pin--2-28 { top: 120vmin; left: 84vmin; }
+.pin--2-29 { top: 123vmin; left: 84vmin; }
+.pin--2-30 { top: 110.5vmin; left: 80.5vmin; }
+.pin--2-31 { top: 110.5vmin; left: 77.5vmin; }
+.pin--2-32 { top: 120vmin; left: 79vmin; }
+.pin--2-33 { top: 123vmin; left: 79vmin; }
+.pin--2-34 { top: 120vmin; left: 76vmin; }
+.pin--2-35 { top: 123vmin; left: 76vmin; }
+.pin--2-36 { top: 120vmin; left: 70vmin; }
+.pin--2-37 { top: 123vmin; left: 70vmin; }
+.pin--2-38 { top: 120vmin; left: 67vmin; }
+.pin--2-39 { top: 123vmin; left: 67vmin; }
+.pin--2-40 { top: 110.5vmin; left: 65.5vmin; }
+.pin--2-41 { top: 110.5vmin; left: 62.5vmin; }
+.pin--2-42 { top: 120vmin; left: 62vmin; }
+.pin--2-43 { top: 123vmin; left: 62vmin; }
+.pin--2-44 { top: 120vmin; left: 59vmin; }
+.pin--2-45 { top: 123vmin; left: 59vmin; }
+.pin--2-46 { top: 120vmin; left: 54vmin; }
+.pin--2-47 { top: 123vmin; left: 54vmin; }
+.pin--2-48 { top: 120vmin; left: 51vmin; }
+.pin--2-49 { top: 87vmin; left: 27vmin; }
+.pin--2-50 { top: 77.5vmin; left: 27vmin; }
+.pin--2-51 { top: 68vmin; left: 27vmin; }
+.pin--2-52 { top: 58.5vmin; left: 27vmin; }
+.pin--2-53 { top: 49vmin; left: 27vmin; }
+.pin--2-54 { top: 39.5vmin; left: 27vmin; }
+.pin--2-55 { top: 89.5vmin; left: 18vmin; }
+.pin--2-56 { top: 89.5vmin; left: 15vmin; }
+.pin--2-57 { top: 89.5vmin; left: 12vmin; }
+.pin--2-58 { top: 89.5vmin; left: 9vmin; }
+.pin--2-59 { top: 86.5vmin; left: 18vmin; }
+.pin--2-60 { top: 86.5vmin; left: 15vmin; }
+.pin--2-61 { top: 86.5vmin; left: 12vmin; }
+.pin--2-62 { top: 86.5vmin; left: 9vmin; }
+.pin--2-63 { top: 79.5vmin; left: 18vmin; }
+.pin--2-64 { top: 79.5vmin; left: 15vmin; }
+.pin--2-65 { top: 79.5vmin; left: 12vmin; }
+.pin--2-66 { top: 79.5vmin; left: 9vmin; }
+.pin--2-67 { top: 76.5vmin; left: 18vmin; }
+.pin--2-68 { top: 76.5vmin; left: 15vmin; }
+.pin--2-69 { top: 76.5vmin; left: 12vmin; }
+.pin--2-70 { top: 76.5vmin; left: 9vmin; }
+.pin--2-71 { top: 69.5vmin; left: 18vmin; }
+.pin--2-72 { top: 69.5vmin; left: 15vmin; }
+.pin--2-73 { top: 69.5vmin; left: 12vmin; }
+.pin--2-74 { top: 69.5vmin; left: 9vmin; }
+.pin--2-75 { top: 62.5vmin; left: 18vmin; }
+.pin--2-76 { top: 62.5vmin; left: 15vmin; }
+.pin--2-77 { top: 62.5vmin; left: 12vmin; }
+.pin--2-78 { top: 62.5vmin; left: 9vmin; }
+.pin--2-79 { top: 59.5vmin; left: 18vmin; }
+.pin--2-80 { top: 59.5vmin; left: 15vmin; }
+.pin--2-81 { top: 59.5vmin; left: 12vmin; }
+.pin--2-82 { top: 59.5vmin; left: 9vmin; }
+.pin--2-83 { top: 52.5vmin; left: 18vmin; }
+.pin--2-84 { top: 52.5vmin; left: 15vmin; }
+.pin--2-85 { top: 52.5vmin; left: 12vmin; }
+.pin--2-86 { top: 52.5vmin; left: 9vmin; }
+.pin--2-87 { top: 49.5vmin; left: 18vmin; }
+.pin--2-88 { top: 49.5vmin; left: 15vmin; }
+.pin--2-89 { top: 49.5vmin; left: 12vmin; }
+.pin--2-90 { top: 49.5vmin; left: 9vmin; }
+.pin--2-91 { top: 42.5vmin; left: 18vmin; }
+.pin--2-92 { top: 42.5vmin; left: 15vmin; }
+.pin--2-93 { top: 42.5vmin; left: 12vmin; }
+.pin--2-94 { top: 42.5vmin; left: 9vmin; }
+.pin--2-95 { top: 39.5vmin; left: 18vmin; }
+.pin--2-96 { top: 39.5vmin; left: 15vmin; }
+.pin--2-97 { top: 39.5vmin; left: 12vmin; }
+.pin--2-98 { top: 39.5vmin; left: 9vmin; }
 
 /* Pins for floor 3 */
 .pin--3-1 { top: 104.5vmin; left: 113.5vmin; }
@@ -1316,105 +1319,70 @@ button:focus {
 .pin--4-71 { top: 22vmin; left: 10vmin; }
 
 /* Pins for floor 4 */
-.pin--5-1 { top: 1vmin; left: 1vmin; }
-.pin--5-2 { top: 1vmin; left: 1vmin; }
-.pin--5-3 { top: 1vmin; left: 1vmin; }
-.pin--5-4 { top: 1vmin; left: 1vmin; }
-.pin--5-5 { top: 1vmin; left: 1vmin; }
-.pin--5-6 { top: 1vmin; left: 1vmin; }
-.pin--5-7 { top: 1vmin; left: 1vmin; }
-.pin--5-8 { top: 1vmin; left: 1vmin; }
-.pin--5-9 { top: 1vmin; left: 1vmin; }
-.pin--5-10 { top: 1vmin; left: 1vmin; }
-.pin--5-11 { top: 1vmin; left: 1vmin; }
-.pin--5-12 { top: 1vmin; left: 1vmin; }
-.pin--5-13 { top: 1vmin; left: 1vmin; }
-.pin--5-14 { top: 1vmin; left: 1vmin; }
-.pin--5-15 { top: 1vmin; left: 1vmin; }
-.pin--5-16 { top: 1vmin; left: 1vmin; }
-.pin--5-17 { top: 1vmin; left: 1vmin; }
-.pin--5-18 { top: 1vmin; left: 1vmin; }
-.pin--5-19 { top: 1vmin; left: 1vmin; }
-.pin--5-20 { top: 1vmin; left: 1vmin; }
-.pin--5-21 { top: 1vmin; left: 1vmin; }
-.pin--5-22 { top: 1vmin; left: 1vmin; }
-.pin--5-23 { top: 1vmin; left: 1vmin; }
-.pin--5-24 { top: 1vmin; left: 1vmin; }
-.pin--5-25 { top: 1vmin; left: 1vmin; }
-.pin--5-26 { top: 1vmin; left: 1vmin; }
-.pin--5-27 { top: 1vmin; left: 1vmin; }
-.pin--5-28 { top: 1vmin; left: 1vmin; }
-.pin--5-29 { top: 1vmin; left: 1vmin; }
-.pin--5-30 { top: 1vmin; left: 1vmin; }
-.pin--5-31 { top: 1vmin; left: 1vmin; }
-.pin--5-32 { top: 1vmin; left: 1vmin; }
-.pin--5-33 { top: 1vmin; left: 1vmin; }
-.pin--5-34 { top: 1vmin; left: 1vmin; }
-.pin--5-35 { top: 1vmin; left: 1vmin; }
-.pin--5-36 { top: 1vmin; left: 1vmin; }
-.pin--5-37 { top: 1vmin; left: 1vmin; }
-.pin--5-38 { top: 1vmin; left: 1vmin; }
-.pin--5-39 { top: 1vmin; left: 1vmin; }
-.pin--5-40 { top: 1vmin; left: 1vmin; }
-.pin--5-41 { top: 1vmin; left: 1vmin; }
-.pin--5-42 { top: 1vmin; left: 1vmin; }
-.pin--5-43 { top: 1vmin; left: 1vmin; }
-.pin--5-44 { top: 1vmin; left: 1vmin; }
-.pin--5-45 { top: 1vmin; left: 1vmin; }
-.pin--5-46 { top: 1vmin; left: 1vmin; }
-.pin--5-47 { top: 1vmin; left: 1vmin; }
-.pin--5-48 { top: 1vmin; left: 1vmin; }
-.pin--5-49 { top: 1vmin; left: 1vmin; }
-.pin--5-50 { top: 1vmin; left: 1vmin; }
-.pin--5-51 { top: 1vmin; left: 1vmin; }
-.pin--5-52 { top: 1vmin; left: 1vmin; }
-.pin--5-53 { top: 1vmin; left: 1vmin; }
-.pin--5-54 { top: 1vmin; left: 1vmin; }
-.pin--5-55 { top: 1vmin; left: 1vmin; }
-.pin--5-56 { top: 1vmin; left: 1vmin; }
-.pin--5-57 { top: 1vmin; left: 1vmin; }
-.pin--5-58 { top: 1vmin; left: 1vmin; }
-.pin--5-59 { top: 1vmin; left: 1vmin; }
-.pin--5-60 { top: 1vmin; left: 1vmin; }
-.pin--5-61 { top: 1vmin; left: 1vmin; }
-.pin--5-62 { top: 1vmin; left: 1vmin; }
-.pin--5-63 { top: 1vmin; left: 1vmin; }
-.pin--5-64 { top: 1vmin; left: 1vmin; }
-.pin--5-65 { top: 1vmin; left: 1vmin; }
-.pin--5-66 { top: 1vmin; left: 1vmin; }
-.pin--5-67 { top: 1vmin; left: 1vmin; }
-.pin--5-68 { top: 1vmin; left: 1vmin; }
-.pin--5-69 { top: 1vmin; left: 1vmin; }
-.pin--5-70 { top: 1vmin; left: 1vmin; }
-.pin--5-71 { top: 1vmin; left: 1vmin; }
-.pin--5-72 { top: 1vmin; left: 1vmin; }
-.pin--5-73 { top: 1vmin; left: 1vmin; }
-.pin--5-74 { top: 1vmin; left: 1vmin; }
-.pin--5-75 { top: 1vmin; left: 1vmin; }
-.pin--5-76 { top: 1vmin; left: 1vmin; }
-.pin--5-77 { top: 1vmin; left: 1vmin; }
-.pin--5-78 { top: 1vmin; left: 1vmin; }
-.pin--5-79 { top: 1vmin; left: 1vmin; }
-.pin--5-80 { top: 1vmin; left: 1vmin; }
-.pin--5-81 { top: 1vmin; left: 1vmin; }
-.pin--5-82 { top: 1vmin; left: 1vmin; }
-.pin--5-83 { top: 1vmin; left: 1vmin; }
-.pin--5-84 { top: 1vmin; left: 1vmin; }
-.pin--5-85 { top: 1vmin; left: 1vmin; }
-.pin--5-86 { top: 1vmin; left: 1vmin; }
-.pin--5-87 { top: 1vmin; left: 1vmin; }
-.pin--5-88 { top: 1vmin; left: 1vmin; }
-.pin--5-89 { top: 1vmin; left: 1vmin; }
-.pin--5-90 { top: 1vmin; left: 1vmin; }
-.pin--5-91 { top: 1vmin; left: 1vmin; }
-.pin--5-92 { top: 1vmin; left: 1vmin; }
-.pin--5-93 { top: 1vmin; left: 1vmin; }
-.pin--5-94 { top: 1vmin; left: 1vmin; }
-.pin--5-95 { top: 1vmin; left: 1vmin; }
-.pin--5-96 { top: 1vmin; left: 1vmin; }
-.pin--5-97 { top: 1vmin; left: 1vmin; }
-.pin--5-98 { top: 1vmin; left: 1vmin; }
-.pin--5-99 { top: 1vmin; left: 1vmin; }
+.pin--5-1 { top: 84vmin; left: 26vmin; }
+.pin--5-2 { top: 77.5vmin; left: 26vmin; }
+.pin--5-3 { top: 71vmin; left: 26vmin; }
+.pin--5-4 { top: 64.5vmin; left: 26vmin; }
+.pin--5-5 { top: 58vmin; left: 26vmin; }
+.pin--5-6 { top: 51.5vmin; left: 26vmin; }
+.pin--5-7 { top: 45vmin; left: 26vmin; }
+.pin--5-8 { top: 38.5vmin; left: 26vmin; }
+.pin--5-9 { top: 32vmin; left: 26vmin; }
+.pin--5-10 { top: 25.5vmin; left: 26vmin; }
+.pin--5-11 { top: 19vmin; left: 26vmin; }
+.pin--5-12 { top: 12.5vmin; left: 26vmin; }
+.pin--5-13 { top: 67.5vmin; left: 18.5vmin; }
+.pin--5-14 { top: 64.5vmin; left: 18.5vmin; }
+.pin--5-15 { top: 61.5vmin; left: 18.5vmin; }
+.pin--5-16 { top: 67.5vmin; left: 15vmin; }
+.pin--5-17 { top: 64.5vmin; left: 15vmin; }
+.pin--5-18 { top: 61.5vmin; left: 15vmin; }
+.pin--5-19 { top: 67.5vmin; left: 12.5vmin; }
+.pin--5-20 { top: 64.5vmin; left: 12.5vmin; }
+.pin--5-21 { top: 61.5vmin; left: 12.5vmin; }
+.pin--5-22 { top: 66.5vmin; left: 9vmin; }
+.pin--5-23 { top: 64.5vmin; left: 9vmin; }
+.pin--5-24 { top: 61.5vmin; left: 9vmin; }
+.pin--5-25 { top: 54vmin; left: 18.5vmin; }
+.pin--5-26 { top: 51vmin; left: 18.5vmin; }
+.pin--5-27 { top: 54vmin; left: 15vmin; }
+.pin--5-28 { top: 51vmin; left: 15vmin; }
+.pin--5-29 { top: 54vmin; left: 12.5vmin; }
+.pin--5-30 { top: 51vmin; left: 12.5vmin; }
+.pin--5-31 { top: 54vmin; left: 9vmin; }
+.pin--5-32 { top: 51vmin; left: 9vmin; }
+.pin--5-33 { top: 43vmin; left: 18.5vmin; }
+.pin--5-34 { top: 40vmin; left: 18.5vmin; }
+.pin--5-35 { top: 37vmin; left: 18.5vmin; }
+.pin--5-36 { top: 43vmin; left: 15vmin; }
+.pin--5-37 { top: 40vmin; left: 15vmin; }
+.pin--5-38 { top: 37vmin; left: 15vmin; }
+.pin--5-39 { top: 43vmin; left: 12.5vmin; }
+.pin--5-40 { top: 40vmin; left: 12.5vmin; }
+.pin--5-41 { top: 37vmin; left: 12.5vmin; }
+.pin--5-42 { top: 43vmin; left: 9vmin; }
+.pin--5-43 { top: 40vmin; left: 9vmin; }
+.pin--5-44 { top: 37vmin; left: 9vmin; }
+.pin--5-45 { top: 29vmin; left: 18.5vmin; }
+.pin--5-46 { top: 26vmin; left: 18.5vmin; }
+.pin--5-47 { top: 23vmin; left: 18.5vmin; }
+.pin--5-48 { top: 29vmin; left: 15vmin; }
+.pin--5-49 { top: 26vmin; left: 15vmin; }
+.pin--5-50 { top: 23vmin; left: 15vmin; }
+.pin--5-51 { top: 17vmin; left: 18.5vmin; }
+.pin--5-52 { top: 14vmin; left: 18.5vmin; }
+.pin--5-53 { top: 17vmin; left: 15vmin; }
+.pin--5-54 { top: 14vmin; left: 15vmin; }
+.pin--5-55 { top: 29vmin; left: 12.5vmin; }
+.pin--5-56 { top: 26vmin; left: 12.5vmin; }
+.pin--5-57 { top: 23vmin; left: 12.5vmin; }
+.pin--5-58 { top: 20vmin; left: 12.5vmin; }
+.pin--5-59 { top: 17vmin; left: 12.5vmin; }
+.pin--5-60 { top: 29vmin; left: 9vmin; }
+.pin--5-61 { top: 26vmin; left: 9vmin; }
+.pin--5-62 { top: 23vmin; left: 9vmin; }
+.pin--5-63 { top: 20vmin; left: 9vmin; }
+.pin--5-64 { top: 17vmin; left: 9vmin; }
 
 
 /* Mobile compatability */
