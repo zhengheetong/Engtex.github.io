@@ -4,7 +4,7 @@ $.ajax(
 {type: 'GET',
 datatype: 'JSON',
 async: false,
-url:"src/Employee%20Location.json",
+url:"https://engtex.github.io/src/Employee%20Location.json",
 success: function(data){
 	data.forEach(function(item){
 		const id = item["Sit ID"].toString();
@@ -24,15 +24,19 @@ success: function(data){
 			}
 		if(document.getElementById(Pid)){
 			let dc = "0";
+			let exten ="";
 			if(item["Status"].includes("Intern")){
 				dc = "1";
 			}
 			else if(item["Status"].includes("Perm")){
 				dc = "2";
 			}
+			if(item["Extension"]!=undefined){
+				exten=item["Extension"]+": ";
+			}
 			document.getElementById(Pid).setAttribute("data-category",dc);
 			document.getElementById(Cid).setAttribute("data-category",dc);
-			document.getElementById(CTid).innerHTML=item["Sit ID"]+": "+item["Name"];
+			document.getElementById(CTid).innerHTML=exten+item["Name"]+"("+item["Sit ID"]+")";
 			document.getElementById(Piid).src=url;
 			document.getElementById(Stid).innerHTML+=item["Status"];
 			document.getElementById(Eid).innerHTML+=item["Email"];
