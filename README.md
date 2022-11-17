@@ -14,7 +14,7 @@
 3. Upload the image to google drive, get and paste the link of the image into to excel file together with other information such as, Sit ID, Name, Status, Extension, Phone Number, Email, Image.
 4. Export the excel file as CSV file
 5. Convert the CSV file into JSON format by using this [website](https://www.convertcsv.com/csv-to-json.htm)
-6. Copy all the output and paste it [here](https://github.com/Engtex/Engtex.github.io/blob/main/src/Employee%20Location.json)
+6. Copy all the output and paste it [here](https://github.com/Engtex/Engtex.github.io/blob/main/src/Employee%20Location.json) <br />( IMPORTANT: Select all and delete the original content first because github is weird for not be able to replace the text correctly) 
 7. Github will took a moment to upload the change and finally it will be done.
 
 ### Credits
